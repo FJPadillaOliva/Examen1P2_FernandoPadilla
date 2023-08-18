@@ -26,17 +26,189 @@ public class MainFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        tabbedpane = new javax.swing.JTabbedPane();
+        panel_AgregarJ = new javax.swing.JPanel();
+        panel_ModificarJ = new javax.swing.JPanel();
+        panel_EliminarJ = new javax.swing.JPanel();
+        panel_ListarJ = new javax.swing.JPanel();
+        panel_AgregarEq = new javax.swing.JPanel();
+        panel_ModificarEq = new javax.swing.JPanel();
+        panel_EliminarEq = new javax.swing.JPanel();
+        panel_ListarEq = new javax.swing.JPanel();
+        panel_AgregarEs = new javax.swing.JPanel();
+        panel_ModificarEs = new javax.swing.JPanel();
+        panel_EliminarEs = new javax.swing.JPanel();
+        panel_ListarEs = new javax.swing.JPanel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        panel_AgregarJ.setBackground(new java.awt.Color(102, 102, 102));
+
+        javax.swing.GroupLayout panel_AgregarJLayout = new javax.swing.GroupLayout(panel_AgregarJ);
+        panel_AgregarJ.setLayout(panel_AgregarJLayout);
+        panel_AgregarJLayout.setHorizontalGroup(
+            panel_AgregarJLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 682, Short.MAX_VALUE)
+        );
+        panel_AgregarJLayout.setVerticalGroup(
+            panel_AgregarJLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 439, Short.MAX_VALUE)
+        );
+
+        tabbedpane.addTab("A.Jugador", panel_AgregarJ);
+
+        javax.swing.GroupLayout panel_ModificarJLayout = new javax.swing.GroupLayout(panel_ModificarJ);
+        panel_ModificarJ.setLayout(panel_ModificarJLayout);
+        panel_ModificarJLayout.setHorizontalGroup(
+            panel_ModificarJLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 682, Short.MAX_VALUE)
+        );
+        panel_ModificarJLayout.setVerticalGroup(
+            panel_ModificarJLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 439, Short.MAX_VALUE)
+        );
+
+        tabbedpane.addTab("M.Jugador", panel_ModificarJ);
+
+        javax.swing.GroupLayout panel_EliminarJLayout = new javax.swing.GroupLayout(panel_EliminarJ);
+        panel_EliminarJ.setLayout(panel_EliminarJLayout);
+        panel_EliminarJLayout.setHorizontalGroup(
+            panel_EliminarJLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 682, Short.MAX_VALUE)
+        );
+        panel_EliminarJLayout.setVerticalGroup(
+            panel_EliminarJLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 439, Short.MAX_VALUE)
+        );
+
+        tabbedpane.addTab("E. Jugador", panel_EliminarJ);
+
+        javax.swing.GroupLayout panel_ListarJLayout = new javax.swing.GroupLayout(panel_ListarJ);
+        panel_ListarJ.setLayout(panel_ListarJLayout);
+        panel_ListarJLayout.setHorizontalGroup(
+            panel_ListarJLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 682, Short.MAX_VALUE)
+        );
+        panel_ListarJLayout.setVerticalGroup(
+            panel_ListarJLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 439, Short.MAX_VALUE)
+        );
+
+        tabbedpane.addTab("L. Jugador", panel_ListarJ);
+
+        javax.swing.GroupLayout panel_AgregarEqLayout = new javax.swing.GroupLayout(panel_AgregarEq);
+        panel_AgregarEq.setLayout(panel_AgregarEqLayout);
+        panel_AgregarEqLayout.setHorizontalGroup(
+            panel_AgregarEqLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 682, Short.MAX_VALUE)
+        );
+        panel_AgregarEqLayout.setVerticalGroup(
+            panel_AgregarEqLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 439, Short.MAX_VALUE)
+        );
+
+        tabbedpane.addTab("A. Equipo", panel_AgregarEq);
+
+        javax.swing.GroupLayout panel_ModificarEqLayout = new javax.swing.GroupLayout(panel_ModificarEq);
+        panel_ModificarEq.setLayout(panel_ModificarEqLayout);
+        panel_ModificarEqLayout.setHorizontalGroup(
+            panel_ModificarEqLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 682, Short.MAX_VALUE)
+        );
+        panel_ModificarEqLayout.setVerticalGroup(
+            panel_ModificarEqLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 439, Short.MAX_VALUE)
+        );
+
+        tabbedpane.addTab("M. Equipo", panel_ModificarEq);
+
+        javax.swing.GroupLayout panel_EliminarEqLayout = new javax.swing.GroupLayout(panel_EliminarEq);
+        panel_EliminarEq.setLayout(panel_EliminarEqLayout);
+        panel_EliminarEqLayout.setHorizontalGroup(
+            panel_EliminarEqLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 682, Short.MAX_VALUE)
+        );
+        panel_EliminarEqLayout.setVerticalGroup(
+            panel_EliminarEqLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 439, Short.MAX_VALUE)
+        );
+
+        tabbedpane.addTab("E. Equipo", panel_EliminarEq);
+
+        javax.swing.GroupLayout panel_ListarEqLayout = new javax.swing.GroupLayout(panel_ListarEq);
+        panel_ListarEq.setLayout(panel_ListarEqLayout);
+        panel_ListarEqLayout.setHorizontalGroup(
+            panel_ListarEqLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 682, Short.MAX_VALUE)
+        );
+        panel_ListarEqLayout.setVerticalGroup(
+            panel_ListarEqLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 439, Short.MAX_VALUE)
+        );
+
+        tabbedpane.addTab("L. Equipo", panel_ListarEq);
+
+        javax.swing.GroupLayout panel_AgregarEsLayout = new javax.swing.GroupLayout(panel_AgregarEs);
+        panel_AgregarEs.setLayout(panel_AgregarEsLayout);
+        panel_AgregarEsLayout.setHorizontalGroup(
+            panel_AgregarEsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 682, Short.MAX_VALUE)
+        );
+        panel_AgregarEsLayout.setVerticalGroup(
+            panel_AgregarEsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 439, Short.MAX_VALUE)
+        );
+
+        tabbedpane.addTab("A. Estadio", panel_AgregarEs);
+
+        javax.swing.GroupLayout panel_ModificarEsLayout = new javax.swing.GroupLayout(panel_ModificarEs);
+        panel_ModificarEs.setLayout(panel_ModificarEsLayout);
+        panel_ModificarEsLayout.setHorizontalGroup(
+            panel_ModificarEsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 682, Short.MAX_VALUE)
+        );
+        panel_ModificarEsLayout.setVerticalGroup(
+            panel_ModificarEsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 439, Short.MAX_VALUE)
+        );
+
+        tabbedpane.addTab("M. Estadio", panel_ModificarEs);
+
+        javax.swing.GroupLayout panel_EliminarEsLayout = new javax.swing.GroupLayout(panel_EliminarEs);
+        panel_EliminarEs.setLayout(panel_EliminarEsLayout);
+        panel_EliminarEsLayout.setHorizontalGroup(
+            panel_EliminarEsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 682, Short.MAX_VALUE)
+        );
+        panel_EliminarEsLayout.setVerticalGroup(
+            panel_EliminarEsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 439, Short.MAX_VALUE)
+        );
+
+        tabbedpane.addTab("E. Estadio", panel_EliminarEs);
+
+        javax.swing.GroupLayout panel_ListarEsLayout = new javax.swing.GroupLayout(panel_ListarEs);
+        panel_ListarEs.setLayout(panel_ListarEsLayout);
+        panel_ListarEsLayout.setHorizontalGroup(
+            panel_ListarEsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 682, Short.MAX_VALUE)
+        );
+        panel_ListarEsLayout.setVerticalGroup(
+            panel_ListarEsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 439, Short.MAX_VALUE)
+        );
+
+        tabbedpane.addTab("L. Estadio", panel_ListarEs);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(tabbedpane)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(tabbedpane)
         );
 
         pack();
@@ -78,5 +250,18 @@ public class MainFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel panel_AgregarEq;
+    private javax.swing.JPanel panel_AgregarEs;
+    private javax.swing.JPanel panel_AgregarJ;
+    private javax.swing.JPanel panel_EliminarEq;
+    private javax.swing.JPanel panel_EliminarEs;
+    private javax.swing.JPanel panel_EliminarJ;
+    private javax.swing.JPanel panel_ListarEq;
+    private javax.swing.JPanel panel_ListarEs;
+    private javax.swing.JPanel panel_ListarJ;
+    private javax.swing.JPanel panel_ModificarEq;
+    private javax.swing.JPanel panel_ModificarEs;
+    private javax.swing.JPanel panel_ModificarJ;
+    private javax.swing.JTabbedPane tabbedpane;
     // End of variables declaration//GEN-END:variables
 }
