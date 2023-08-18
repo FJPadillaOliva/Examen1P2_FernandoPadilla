@@ -4,6 +4,11 @@
  */
 package examen1p2_fernandopadilla;
 
+import java.util.ArrayList;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JComboBox;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Wendy
@@ -13,6 +18,10 @@ public class MainFrame extends javax.swing.JFrame {
     /**
      * Creates new form MainFrame
      */
+    ArrayList<Equipo> equipos = new ArrayList();
+    ArrayList<Estadio> estadios = new ArrayList();
+    ArrayList<Jugador> jugadores = new ArrayList();
+
     public MainFrame() {
         initComponents();
     }
@@ -32,10 +41,24 @@ public class MainFrame extends javax.swing.JFrame {
         panel_EliminarJ = new javax.swing.JPanel();
         panel_ListarJ = new javax.swing.JPanel();
         panel_AgregarEq = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        tf_nombreEquipo = new javax.swing.JTextField();
+        tf_paisEquipo = new javax.swing.JTextField();
+        jb_crearEq = new javax.swing.JButton();
         panel_ModificarEq = new javax.swing.JPanel();
         panel_EliminarEq = new javax.swing.JPanel();
         panel_ListarEq = new javax.swing.JPanel();
         panel_AgregarEs = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        tf_nombreEstadio = new javax.swing.JTextField();
+        tf_ciudadEstadio = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        tf_capacidadE = new javax.swing.JTextField();
+        cb_equipos = new javax.swing.JComboBox<>();
+        btn_crearEs = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
         panel_ModificarEs = new javax.swing.JPanel();
         panel_EliminarEs = new javax.swing.JPanel();
         panel_ListarEs = new javax.swing.JPanel();
@@ -96,15 +119,52 @@ public class MainFrame extends javax.swing.JFrame {
 
         tabbedpane.addTab("L. Jugador", panel_ListarJ);
 
+        panel_AgregarEq.setBackground(new java.awt.Color(102, 102, 102));
+
+        jLabel1.setText("Nombre del Equipo");
+
+        jLabel2.setText("Pais del Equipo");
+
+        jb_crearEq.setText("Crear");
+        jb_crearEq.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_crearEqMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout panel_AgregarEqLayout = new javax.swing.GroupLayout(panel_AgregarEq);
         panel_AgregarEq.setLayout(panel_AgregarEqLayout);
         panel_AgregarEqLayout.setHorizontalGroup(
             panel_AgregarEqLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 682, Short.MAX_VALUE)
+            .addGroup(panel_AgregarEqLayout.createSequentialGroup()
+                .addGap(76, 76, 76)
+                .addGroup(panel_AgregarEqLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel2))
+                .addGap(18, 18, 18)
+                .addGroup(panel_AgregarEqLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(tf_nombreEquipo, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tf_paisEquipo, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_AgregarEqLayout.createSequentialGroup()
+                .addContainerGap(56, Short.MAX_VALUE)
+                .addComponent(jb_crearEq, javax.swing.GroupLayout.PREFERRED_SIZE, 581, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(45, 45, 45))
         );
         panel_AgregarEqLayout.setVerticalGroup(
             panel_AgregarEqLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 439, Short.MAX_VALUE)
+            .addGroup(panel_AgregarEqLayout.createSequentialGroup()
+                .addGap(66, 66, 66)
+                .addGroup(panel_AgregarEqLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel1)
+                    .addComponent(tf_nombreEquipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(panel_AgregarEqLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(tf_paisEquipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 93, Short.MAX_VALUE)
+                .addComponent(jb_crearEq, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27))
         );
 
         tabbedpane.addTab("A. Equipo", panel_AgregarEq);
@@ -148,15 +208,68 @@ public class MainFrame extends javax.swing.JFrame {
 
         tabbedpane.addTab("L. Equipo", panel_ListarEq);
 
+        panel_AgregarEs.setBackground(new java.awt.Color(102, 102, 102));
+
+        jLabel3.setText("Nombre del Estadio");
+
+        jLabel4.setText("Ciudad del Estadio");
+
+        jLabel5.setText("Capacidad Estadio");
+
+        btn_crearEs.setText("Crear Estadio");
+        btn_crearEs.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_crearEsMouseClicked(evt);
+            }
+        });
+
+        jLabel6.setText("Club Propietario");
+
         javax.swing.GroupLayout panel_AgregarEsLayout = new javax.swing.GroupLayout(panel_AgregarEs);
         panel_AgregarEs.setLayout(panel_AgregarEsLayout);
         panel_AgregarEsLayout.setHorizontalGroup(
             panel_AgregarEsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 682, Short.MAX_VALUE)
+            .addGroup(panel_AgregarEsLayout.createSequentialGroup()
+                .addGap(99, 99, 99)
+                .addGroup(panel_AgregarEsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btn_crearEs, javax.swing.GroupLayout.PREFERRED_SIZE, 522, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(panel_AgregarEsLayout.createSequentialGroup()
+                        .addGroup(panel_AgregarEsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel4)
+                            .addGroup(panel_AgregarEsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGap(18, 18, 18)
+                        .addGroup(panel_AgregarEsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(tf_capacidadE, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tf_nombreEstadio, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tf_ciudadEstadio, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cb_equipos, javax.swing.GroupLayout.PREFERRED_SIZE, 324, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(61, Short.MAX_VALUE))
         );
         panel_AgregarEsLayout.setVerticalGroup(
             panel_AgregarEsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 439, Short.MAX_VALUE)
+            .addGroup(panel_AgregarEsLayout.createSequentialGroup()
+                .addGap(72, 72, 72)
+                .addGroup(panel_AgregarEsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel3)
+                    .addComponent(tf_nombreEstadio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(panel_AgregarEsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(tf_ciudadEstadio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(23, 23, 23)
+                .addGroup(panel_AgregarEsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(tf_capacidadE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(panel_AgregarEsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cb_equipos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel6))
+                .addGap(29, 29, 29)
+                .addComponent(btn_crearEs, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(21, Short.MAX_VALUE))
         );
 
         tabbedpane.addTab("A. Estadio", panel_AgregarEs);
@@ -214,6 +327,56 @@ public class MainFrame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    public DefaultComboBoxModel actualizarComboEquipo(JComboBox cb){
+        DefaultComboBoxModel modelo = (DefaultComboBoxModel) cb.getModel();
+        
+        for (Equipo t : equipos) {
+            modelo.addElement(t);
+        }
+        return modelo;
+    }
+    
+    public DefaultComboBoxModel actualizarComboJugador(JComboBox cb){
+         DefaultComboBoxModel modelo = (DefaultComboBoxModel) cb.getModel();
+        
+        for (Jugador t : jugadores) {
+            modelo.addElement(t);
+        }
+        return modelo;
+    }
+    
+    public DefaultComboBoxModel actualizarComboEstadio(JComboBox cb){
+         DefaultComboBoxModel modelo = (DefaultComboBoxModel) cb.getModel();
+        
+        for (Estadio t : estadios) {
+            modelo.addElement(t);
+        }
+        return modelo;
+    }
+    
+    private void jb_crearEqMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_crearEqMouseClicked
+
+        if (tf_nombreEquipo.getText().equals("") || tf_paisEquipo.getText().equals("")) {
+            JOptionPane.showMessageDialog(this, "Ingrese todos los atributos");
+            tf_nombreEquipo.setText("");
+            tf_paisEquipo.setText("");
+        } else {
+            String nombreE = tf_nombreEquipo.getText();
+            String paisE = tf_paisEquipo.getText();
+            tf_nombreEquipo.setText("");
+            tf_paisEquipo.setText("");
+            equipos.add(new Equipo(nombreE, paisE));
+            JOptionPane.showMessageDialog(this, "Equipo agregado exitosamente");
+            cb_equipos.setModel(actualizarComboEquipo(cb_equipos));
+        }
+    }//GEN-LAST:event_jb_crearEqMouseClicked
+
+    private void btn_crearEsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_crearEsMouseClicked
+        if (tf_nombreEstadio.getText().equals("") || tf_ciudadEstadio.getText().equals("")) {
+            
+        }
+    }//GEN-LAST:event_btn_crearEsMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -250,6 +413,15 @@ public class MainFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btn_crearEs;
+    private javax.swing.JComboBox<String> cb_equipos;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JButton jb_crearEq;
     private javax.swing.JPanel panel_AgregarEq;
     private javax.swing.JPanel panel_AgregarEs;
     private javax.swing.JPanel panel_AgregarJ;
@@ -263,5 +435,10 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JPanel panel_ModificarEs;
     private javax.swing.JPanel panel_ModificarJ;
     private javax.swing.JTabbedPane tabbedpane;
+    private javax.swing.JTextField tf_capacidadE;
+    private javax.swing.JTextField tf_ciudadEstadio;
+    private javax.swing.JTextField tf_nombreEquipo;
+    private javax.swing.JTextField tf_nombreEstadio;
+    private javax.swing.JTextField tf_paisEquipo;
     // End of variables declaration//GEN-END:variables
 }

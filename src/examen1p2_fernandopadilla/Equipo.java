@@ -14,10 +14,10 @@ public class Equipo {
     public Equipo() {
     }
 
-    public Equipo(String nombre, String pais, int rating) {
+    public Equipo(String nombre, String pais) {
         this.nombre = nombre;
         this.pais = pais;
-        this.rating = rating;
+        this.rating = 0;
     }
 
     public String getNombre() {
