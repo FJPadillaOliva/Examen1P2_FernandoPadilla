@@ -453,7 +453,7 @@ public class MainFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     public DefaultComboBoxModel actualizarComboEquipo(JComboBox cb){
-        DefaultComboBoxModel modelo = (DefaultComboBoxModel) cb.getModel();
+        DefaultComboBoxModel modelo = new DefaultComboBoxModel();
         
         for (Equipo t : equipos) {
             modelo.addElement(t);
@@ -462,7 +462,7 @@ public class MainFrame extends javax.swing.JFrame {
     }
     
     public DefaultComboBoxModel actualizarComboJugador(JComboBox cb){
-         DefaultComboBoxModel modelo = (DefaultComboBoxModel) cb.getModel();
+         DefaultComboBoxModel modelo = new DefaultComboBoxModel();
         
         for (Jugador t : jugadores) {
             modelo.addElement(t);
@@ -471,7 +471,7 @@ public class MainFrame extends javax.swing.JFrame {
     }
     
     public DefaultComboBoxModel actualizarComboEstadio(JComboBox cb){
-         DefaultComboBoxModel modelo = (DefaultComboBoxModel) cb.getModel();
+         DefaultComboBoxModel modelo = new DefaultComboBoxModel();
         
         for (Estadio t : estadios) {
             modelo.addElement(t);
@@ -514,6 +514,7 @@ public class MainFrame extends javax.swing.JFrame {
             tf_nombreEstadio.setText("");
             tf_ciudadEstadio.setText("");
             tf_capacidadE.setText("");
+            cb_eliminarEs.setModel(actualizarComboEstadio(cb_eliminarEs));
         }
     }//GEN-LAST:event_btn_crearEsMouseClicked
 
@@ -563,7 +564,10 @@ public class MainFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_agregarJMouseClicked
 
     private void btn_eliminarJMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_eliminarJMouseClicked
-        
+        if (cb_eliminarEs.getSelectedIndex() >= 0) {
+            estadios.remove(cb_eliminarEs.getSelectedIndex());
+            JOptionPane.showMessageDialog(this, "Eliminado con exito");
+        }
     }//GEN-LAST:event_btn_eliminarJMouseClicked
 
     /**
