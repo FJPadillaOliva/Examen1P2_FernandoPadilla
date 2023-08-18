@@ -161,7 +161,7 @@ public abstract class Jugador {
         this.disparo = disparo;
     }
     
-    
+    public abstract void setAtributos();
     
     
 }
