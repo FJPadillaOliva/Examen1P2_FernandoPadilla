@@ -49,6 +49,12 @@ public class Estadio {
     public void setEquipoP(Equipo equipoP) {
         this.equipoP = equipoP;
     }
+
+    @Override
+    public String toString() {
+        return nombre ;
+    }
+    
     
     
 }

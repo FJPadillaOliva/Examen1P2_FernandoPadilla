@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -55,6 +56,9 @@ public class MainFrame extends javax.swing.JFrame {
         cb_eliminarJ = new javax.swing.JComboBox<>();
         btn_eliminarJ = new javax.swing.JButton();
         panel_ListarJ = new javax.swing.JPanel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        Table_jugador = new javax.swing.JTable();
+        bt_actualizarJugador = new javax.swing.JButton();
         panel_AgregarEq = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -64,6 +68,9 @@ public class MainFrame extends javax.swing.JFrame {
         panel_ModificarEq = new javax.swing.JPanel();
         panel_EliminarEq = new javax.swing.JPanel();
         panel_ListarEq = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        Table_equipo = new javax.swing.JTable();
+        bt_actualizarEquipo = new javax.swing.JButton();
         panel_AgregarEs = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -79,6 +86,9 @@ public class MainFrame extends javax.swing.JFrame {
         cb_eliminarEs = new javax.swing.JComboBox<>();
         bt_elminarEs = new javax.swing.JButton();
         panel_ListarEs = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        Table_estadio = new javax.swing.JTable();
+        bt_actualizarEstadio = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -215,15 +225,52 @@ public class MainFrame extends javax.swing.JFrame {
 
         tabbedpane.addTab("E. Jugador", panel_EliminarJ);
 
+        Table_jugador.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nombre", "Edad", "Nacionalidad", "Pie Habil", "Rating", "Equipo"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane3.setViewportView(Table_jugador);
+
+        bt_actualizarJugador.setText("Actualizar");
+        bt_actualizarJugador.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bt_actualizarJugadorMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout panel_ListarJLayout = new javax.swing.GroupLayout(panel_ListarJ);
         panel_ListarJ.setLayout(panel_ListarJLayout);
         panel_ListarJLayout.setHorizontalGroup(
             panel_ListarJLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 682, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_ListarJLayout.createSequentialGroup()
+                .addContainerGap(58, Short.MAX_VALUE)
+                .addComponent(bt_actualizarJugador)
+                .addGap(54, 54, 54)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 481, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         panel_ListarJLayout.setVerticalGroup(
             panel_ListarJLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 439, Short.MAX_VALUE)
+            .addGroup(panel_ListarJLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_ListarJLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(bt_actualizarJugador)
+                .addGap(206, 206, 206))
         );
 
         tabbedpane.addTab("L. Jugador", panel_ListarJ);
@@ -304,15 +351,44 @@ public class MainFrame extends javax.swing.JFrame {
 
         tabbedpane.addTab("E. Equipo", panel_EliminarEq);
 
+        Table_equipo.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nombre", "Pais", "Rating"
+            }
+        ));
+        jScrollPane2.setViewportView(Table_equipo);
+
+        bt_actualizarEquipo.setText("Actualizar");
+        bt_actualizarEquipo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bt_actualizarEquipoMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout panel_ListarEqLayout = new javax.swing.GroupLayout(panel_ListarEq);
         panel_ListarEq.setLayout(panel_ListarEqLayout);
         panel_ListarEqLayout.setHorizontalGroup(
             panel_ListarEqLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 682, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_ListarEqLayout.createSequentialGroup()
+                .addGap(51, 51, 51)
+                .addComponent(bt_actualizarEquipo)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(40, 40, 40))
         );
         panel_ListarEqLayout.setVerticalGroup(
             panel_ListarEqLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 439, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_ListarEqLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+            .addGroup(panel_ListarEqLayout.createSequentialGroup()
+                .addGap(199, 199, 199)
+                .addComponent(bt_actualizarEquipo)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         tabbedpane.addTab("L. Equipo", panel_ListarEq);
@@ -399,6 +475,11 @@ public class MainFrame extends javax.swing.JFrame {
         panel_EliminarEs.setBackground(new java.awt.Color(102, 102, 102));
 
         bt_elminarEs.setText("Eliminar");
+        bt_elminarEs.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bt_elminarEsMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout panel_EliminarEsLayout = new javax.swing.GroupLayout(panel_EliminarEs);
         panel_EliminarEs.setLayout(panel_EliminarEsLayout);
@@ -425,15 +506,53 @@ public class MainFrame extends javax.swing.JFrame {
 
         tabbedpane.addTab("E. Estadio", panel_EliminarEs);
 
+        Table_estadio.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nombre", "Ciudad", "Capacidad", "Equipo"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(Table_estadio);
+
+        bt_actualizarEstadio.setText("Actualizar");
+        bt_actualizarEstadio.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bt_actualizarEstadioMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout panel_ListarEsLayout = new javax.swing.GroupLayout(panel_ListarEs);
         panel_ListarEs.setLayout(panel_ListarEsLayout);
         panel_ListarEsLayout.setHorizontalGroup(
             panel_ListarEsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 682, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_ListarEsLayout.createSequentialGroup()
+                .addGap(56, 56, 56)
+                .addComponent(bt_actualizarEstadio)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28))
         );
         panel_ListarEsLayout.setVerticalGroup(
             panel_ListarEsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 439, Short.MAX_VALUE)
+            .addGroup(panel_ListarEsLayout.createSequentialGroup()
+                .addGroup(panel_ListarEsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panel_ListarEsLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panel_ListarEsLayout.createSequentialGroup()
+                        .addGap(204, 204, 204)
+                        .addComponent(bt_actualizarEstadio)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         tabbedpane.addTab("L. Estadio", panel_ListarEs);
@@ -452,7 +571,7 @@ public class MainFrame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    public DefaultComboBoxModel actualizarComboEquipo(JComboBox cb){
+    public DefaultComboBoxModel actualizarComboEquipo(){
         DefaultComboBoxModel modelo = new DefaultComboBoxModel();
         
         for (Equipo t : equipos) {
@@ -461,7 +580,7 @@ public class MainFrame extends javax.swing.JFrame {
         return modelo;
     }
     
-    public DefaultComboBoxModel actualizarComboJugador(JComboBox cb){
+    public DefaultComboBoxModel actualizarComboJugador(){
          DefaultComboBoxModel modelo = new DefaultComboBoxModel();
         
         for (Jugador t : jugadores) {
@@ -470,11 +589,38 @@ public class MainFrame extends javax.swing.JFrame {
         return modelo;
     }
     
-    public DefaultComboBoxModel actualizarComboEstadio(JComboBox cb){
+    public DefaultComboBoxModel actualizarComboEstadio(){
          DefaultComboBoxModel modelo = new DefaultComboBoxModel();
         
         for (Estadio t : estadios) {
             modelo.addElement(t);
+        }
+        return modelo;
+    }
+    
+    public DefaultTableModel actualizarTablaJugador(DefaultTableModel tm){
+        DefaultTableModel modelo = tm;
+        for (Jugador t : jugadores) {
+         Object[] row = {t.getNombre(),t.getEdad(),t.getNacionalidad(),t.getPieH(),t.getRating(),t.getEquipo().getNombre()};  
+         modelo.addRow(row);
+        }
+        return modelo;
+    }
+    
+    public DefaultTableModel actualizarTablaEquipo(DefaultTableModel tm){
+        DefaultTableModel modelo = tm;
+        for (Equipo t : equipos) {
+            Object[] row = {t.getNombre(),t.getPais(),t.getRating()};
+            modelo.addRow(row);
+        }
+        return modelo;
+    }
+    
+    public DefaultTableModel actualizarTablaEstadio(DefaultTableModel tm){
+        DefaultTableModel modelo = tm;
+        for (Estadio t : estadios) {
+            Object[] row = {};
+            modelo.addRow(row);
         }
         return modelo;
     }
@@ -492,7 +638,7 @@ public class MainFrame extends javax.swing.JFrame {
             tf_paisEquipo.setText("");
             equipos.add(new Equipo(nombreE, paisE));
             JOptionPane.showMessageDialog(this, "Equipo agregado exitosamente");
-            cb_equipos.setModel(actualizarComboEquipo(cb_equipos));
+            cb_equipos.setModel(actualizarComboEquipo());
         }
     }//GEN-LAST:event_jb_crearEqMouseClicked
 
@@ -514,7 +660,7 @@ public class MainFrame extends javax.swing.JFrame {
             tf_nombreEstadio.setText("");
             tf_ciudadEstadio.setText("");
             tf_capacidadE.setText("");
-            cb_eliminarEs.setModel(actualizarComboEstadio(cb_eliminarEs));
+            cb_eliminarEs.setModel(actualizarComboEstadio());
         }
     }//GEN-LAST:event_btn_crearEsMouseClicked
 
@@ -564,11 +710,28 @@ public class MainFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_agregarJMouseClicked
 
     private void btn_eliminarJMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_eliminarJMouseClicked
+        
+    }//GEN-LAST:event_btn_eliminarJMouseClicked
+
+    private void bt_elminarEsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_elminarEsMouseClicked
         if (cb_eliminarEs.getSelectedIndex() >= 0) {
             estadios.remove(cb_eliminarEs.getSelectedIndex());
             JOptionPane.showMessageDialog(this, "Eliminado con exito");
+            cb_eliminarEs.setModel(actualizarComboEstadio());
         }
-    }//GEN-LAST:event_btn_eliminarJMouseClicked
+    }//GEN-LAST:event_bt_elminarEsMouseClicked
+
+    private void bt_actualizarEquipoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_actualizarEquipoMouseClicked
+       Table_equipo.setModel(actualizarTablaEquipo((DefaultTableModel)Table_equipo.getModel()));
+    }//GEN-LAST:event_bt_actualizarEquipoMouseClicked
+
+    private void bt_actualizarEstadioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_actualizarEstadioMouseClicked
+        Table_estadio.setModel(actualizarTablaEstadio((DefaultTableModel)Table_estadio.getModel()));
+    }//GEN-LAST:event_bt_actualizarEstadioMouseClicked
+
+    private void bt_actualizarJugadorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_actualizarJugadorMouseClicked
+        Table_jugador.setModel(actualizarTablaJugador((DefaultTableModel)Table_jugador.getModel()));
+    }//GEN-LAST:event_bt_actualizarJugadorMouseClicked
 
     /**
      * @param args the command line arguments
@@ -606,6 +769,12 @@ public class MainFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTable Table_equipo;
+    private javax.swing.JTable Table_estadio;
+    private javax.swing.JTable Table_jugador;
+    private javax.swing.JButton bt_actualizarEquipo;
+    private javax.swing.JButton bt_actualizarEstadio;
+    private javax.swing.JButton bt_actualizarJugador;
     private javax.swing.JButton bt_elminarEs;
     private javax.swing.JButton btn_agregarJ;
     private javax.swing.JButton btn_crearEs;
@@ -627,6 +796,9 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JButton jb_crearEq;
     private javax.swing.JPanel panel_AgregarEq;
     private javax.swing.JPanel panel_AgregarEs;

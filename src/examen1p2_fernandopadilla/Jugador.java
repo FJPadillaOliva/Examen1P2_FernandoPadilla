@@ -162,6 +162,13 @@ public abstract class Jugador {
     }
     
     public abstract void setAtributos();
+
+    @Override
+    public String toString() {
+        return nombre;
+    }
+    
+    
     
     
 }

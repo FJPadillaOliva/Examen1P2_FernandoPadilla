@@ -51,6 +51,11 @@ public class Equipo {
     public void setPlantilla(ArrayList<Jugador> plantilla) {
         this.plantilla = plantilla;
     }
+
+    @Override
+    public String toString() {
+        return nombre;
+    }
     
     
 }
