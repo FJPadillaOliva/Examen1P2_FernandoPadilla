@@ -865,7 +865,7 @@ public class MainFrame extends javax.swing.JFrame {
             tf_ciudadEstadio.setText("");
             tf_capacidadE.setText("");
             cb_eliminarEs.setModel(actualizarComboEstadio());
-
+            cb_modificarEs.setModel(actualizarComboEstadio());
         }
     }//GEN-LAST:event_btn_crearEsMouseClicked
 
@@ -991,7 +991,21 @@ public class MainFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_modificarJMouseClicked
 
     private void btn_modificarEsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_modificarEsMouseClicked
-        // TODO add your handling code here:
+        String nombreE = tf_nombreEstadio1.getText();
+        String ciudad = tf_ciudadEstadio1.getText();
+        int capacidad = Integer.parseInt(tf_capacidadE1.getText());
+        Equipo equipoP = equipos.get(cb_equipos1.getSelectedIndex());
+        estadios.add(new Estadio(nombreE, ciudad, capacidad, equipoP));
+        tf_nombreEstadio1.setText("");
+        tf_ciudadEstadio1.setText("");
+        tf_capacidadE1.setText("");
+        estadios.get(cb_modificarEs.getSelectedIndex()).setNombre(nombreE);
+        estadios.get(cb_modificarEs.getSelectedIndex()).setCiudad(ciudad);
+        estadios.get(cb_modificarEs.getSelectedIndex()).setCapacidad(capacidad);
+        estadios.get(cb_modificarEs.getSelectedIndex()).setEquipoP(equipoP);
+        JOptionPane.showMessageDialog(this, "Modificado con exito");
+        cb_eliminarEs.setModel(actualizarComboEstadio());
+        cb_modificarEs.setModel(actualizarComboEstadio());
     }//GEN-LAST:event_btn_modificarEsMouseClicked
 
     /**
