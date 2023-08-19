@@ -918,6 +918,15 @@ public class MainFrame extends javax.swing.JFrame {
             } else {
                 JOptionPane.showMessageDialog(this, "Este equipo ya esta lleno");
             }
+            
+            if (equipos.get(cb_equipoJugador.getSelectedIndex()).getPlantilla().size() == 4) {
+                int calificacion = 0;
+                for (int i = 0; i <= 3; i++) {
+                   calificacion += equipos.get(cb_equipoJugador.getSelectedIndex()).getPlantilla().get(i).getRating();
+                }
+                calificacion = calificacion / 4;
+                equipos.get(cb_equipoJugador.getSelectedIndex()).setRating(calificacion);
+            }
 
         }
     }//GEN-LAST:event_btn_agregarJMouseClicked
